@@ -15,9 +15,7 @@
       --bg-card: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -51,14 +49,11 @@
       display: block;
     }
 
-    .identity {
-      flex: 1;
-    }
+    .identity { flex: 1; }
 
     .name {
       font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: 0.02em;
       margin: 0 0 4px 0;
     }
 
@@ -77,9 +72,7 @@
       gap: 8px 18px;
     }
 
-    .meta span {
-      white-space: nowrap;
-    }
+    .meta span { white-space: nowrap; }
 
     h2 {
       font-size: 1rem;
@@ -90,9 +83,7 @@
       color: var(--accent);
     }
 
-    section + section {
-      margin-top: 6px;
-    }
+    section + section { margin-top: 6px; }
 
     .summary {
       font-size: 0.96rem;
@@ -123,13 +114,8 @@
       margin-top: 8px;
     }
 
-    .experience-item {
-      margin-bottom: 8px;
-    }
-
-    .experience-item strong {
-      font-size: 0.95rem;
-    }
+    .experience-item { margin-bottom: 8px; }
+    .experience-item strong { font-size: 0.95rem; }
 
     .role-meta {
       font-size: 0.82rem;
@@ -143,27 +129,12 @@
       font-size: 0.9rem;
     }
 
-    li {
-      margin-bottom: 3px;
-    }
+    li { margin-bottom: 3px; }
 
-    .inline-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+    .inline-list { list-style: none; margin: 0; padding: 0; }
 
-    .inline-list li {
-      margin: 0;
-    }
-
-    .project {
-      margin-bottom: 6px;
-    }
-
-    .project strong {
-      font-size: 0.9rem;
-    }
+    .project { margin-bottom: 6px; }
+    .project strong { font-size: 0.9rem; }
 
     .edu-item, .cert-item {
       font-size: 0.9rem;
@@ -177,70 +148,46 @@
     }
 
     @media (max-width: 720px) {
-      body {
-        padding: 12px;
-      }
-
-      .page {
-        padding: 20px 16px;
-      }
-
+      body { padding: 12px; }
+      .page { padding: 20px 16px; }
       header {
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .logo-wrap img {
-        max-height: 60px;
-      }
-
-      .two-col {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .meta {
-        flex-direction: column;
-        gap: 2px;
-      }
+      .logo-wrap img { max-height: 60px; }
+      .two-col { grid-template-columns: minmax(0, 1fr); }
+      .meta { flex-direction: column; gap: 2px; }
     }
 
-    /* Print styles: make it look like a clean 1-page PDF */
     @media print {
-      body {
-        background: #ffffff;
-        padding: 0;
-      }
-
+      body { background: #ffffff; padding: 0; }
       .page {
         box-shadow: none;
         border-radius: 0;
         padding: 20px 32px;
       }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+      a { color: inherit; text-decoration: none; }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header>
       <div class="logo-wrap">
-        <!-- Place wepgt-logo.png in the same folder as this HTML file -->
-     <img src="https://raw.githubusercontent.com/WEPGT/elroyphillip-resume/main/wepgt-logo.png" alt="WEP Global Tech Logo">
-
+        <img src="https://raw.githubusercontent.com/WEPGT/elroyphillip-resume/main/wepgt-logo.png" alt="WEP Global Tech Logo">
       </div>
+
       <div class="identity">
         <h1 class="name">Elroy “Roy” Phillip</h1>
         <p class="title">Cloud Engineer • Systems Administrator • Infrastructure Consultant</p>
+
         <div class="meta">
           <span>Founder, WEP Global Tech (WEPGT)</span>
           <span>Atlanta, GA</span>
           <span>Email: elroy.phillip@wepgt.com</span>
           <span>Phone: (404) 855-6821</span>
-          <span>Web: elroyphillip.com • wepgt.com</span>
+          <span>Web: wepgt.com</span>
           <span>GitHub: github.com/WEPGT</span>
           <span>LinkedIn: linkedin.com/in/elroyphillip</span>
         </div>
@@ -254,34 +201,36 @@
         Cloud Infrastructure Consultant and Systems Administrator with 10+ years supporting complex IT, broadcast,
         and enterprise environments. Experienced across AWS, Linux/Windows systems, network architecture, Terraform,
         automation, CI/CD workflows, and security-first operations. Strong background in broadcast engineering and
-        real-time system support from high-availability media environments (CNN/Warner Media Discovery).
-        Founder of <strong>WEP Global Tech (WEPGT)</strong> providing cloud, network, and systems engineering solutions.
+        real-time system support. Founder of <strong>WEP Global Tech (WEPGT)</strong>.
       </p>
     </section>
 
     <!-- CORE SKILLS -->
     <section>
       <h2>Core Skills</h2>
+
       <div>
         <strong>Cloud:</strong>
         <div class="pill-row">
           <span class="pill">AWS (EC2, VPC, IAM, S3)</span>
-          <span class="pill">CloudWatch &amp; Lambda</span>
+          <span class="pill">CloudWatch & Lambda</span>
           <span class="pill">Terraform</span>
           <span class="pill">Serverless Architectures</span>
         </div>
       </div>
+
       <div>
         <strong>Systems:</strong>
         <div class="pill-row">
           <span class="pill">Windows Server</span>
           <span class="pill">Linux (Ubuntu/Debian)</span>
-          <span class="pill">Active Directory / Azure AD</span>
+          <span class="pill">Active Directory</span>
           <span class="pill">Virtualization</span>
         </div>
       </div>
+
       <div>
-        <strong>Automation &amp; DevOps:</strong>
+        <strong>Automation & DevOps:</strong>
         <div class="pill-row">
           <span class="pill">Bash</span>
           <span class="pill">PowerShell</span>
@@ -290,6 +239,7 @@
           <span class="pill">Infrastructure as Code</span>
         </div>
       </div>
+
       <div>
         <strong>Networking:</strong>
         <div class="pill-row">
@@ -300,6 +250,7 @@
           <span class="pill">Firewalls</span>
         </div>
       </div>
+
       <div>
         <strong>Tools:</strong>
         <div class="pill-row">
@@ -307,119 +258,3 @@
           <span class="pill">Prisma</span>
           <span class="pill">Docker</span>
           <span class="pill">GitHub Pages</span>
-          <span class="pill">Cloudflare</span>
-          <span class="pill">SQL / SQLite</span>
-        </div>
-      </div>
-      <div>
-        <strong>Soft Skills:</strong>
-        <div class="pill-row">
-          <span class="pill">Incident Response</span>
-          <span class="pill">Client Engagement</span>
-          <span class="pill">Documentation</span>
-          <span class="pill">Root-Cause Analysis</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="two-col">
-      <!-- LEFT: EXPERIENCE & PROJECTS -->
-      <div>
-        <section>
-          <h2>Experience</h2>
-
-          <div class="experience-item">
-            <strong>WEP Global Tech (WEPGT) – Founder &amp; Cloud Infrastructure Consultant</strong>
-            <div class="role-meta">2023 – Present | Atlanta, GA</div>
-            <ul>
-              <li>Architect cloud solutions including VPC design, secure IAM policies, monitoring, and serverless workflows on AWS.</li>
-              <li>Built <strong>Cloud Application Dashboard (C.A.D.)</strong>, a serverless monitoring platform using AWS Lambda, DynamoDB, and CloudWatch Logs with Terraform as IaC.</li>
-              <li>Delivered network engineering services: AP deployment, Ruckus/MikroTik configuration, VPN and remote access setups, and small-enterprise network optimization.</li>
-              <li>Developed custom applications (R.A.T. security reporting platform, Resident Verifier, Expense Tracker) using Node.js, Prisma, SQLite, and GitHub-based workflows.</li>
-              <li>Provided consulting for small businesses on cloud migration, website hosting, and security best practices.</li>
-            </ul>
-          </div>
-
-                    <div class="experience-item">
-            <strong>IT Systems Administrator – Various Environments</strong>
-            <div class="role-meta">2015 – 2023</div>
-            <ul>
-              <li>Administered Windows Server environments, Active Directory, Group Policy, and user provisioning.</li>
-              <li>Supported network infrastructure including switches, firewalls, Wi-Fi, and remote access solutions.</li>
-              <li>Created and maintained documentation for system rebuilds, disaster recovery procedures, and automation scripts.</li>
-            </ul>
-          </div>
-          <div class="experience-item">
-            <strong>Warner Media Discovery / CNN – Broadcast &amp; IT Systems Support</strong>
-            <div class="role-meta">2008 – 2015 | Atlanta, GA</div>
-            <ul>
-              <li>Supported mission-critical broadcast and IT systems across control rooms, editorial environments, and on-air infrastructure.</li>
-              <li>Managed servers, workstations, networking, routing equipment, and signal-flow devices with strict uptime requirements.</li>
-              <li>Executed system upgrades, patching, configuration changes, and hardware installations in live media environments.</li>
-              <li>Collaborated with engineering, IT, and production teams to maintain high availability during breaking news cycles.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h2>Project Highlights</h2>
-
-          <div class="project">
-            <strong>Cloud Application Dashboard (C.A.D.) – AWS</strong>
-            <ul class="inline-list">
-              <li>Serverless metrics pipeline with Lambda, CloudWatch, and DynamoDB; Terraform-managed infrastructure; IAM hardening and CI/CD.</li>
-            </ul>
-          </div>
-
-          <div class="project">
-            <strong>R.A.T. – Report &amp; Transmit Platform</strong>
-            <ul class="inline-list">
-              <li>Daily activity reporting system for security companies using Node.js, Prisma, authentication, and PDF export workflows.</li>
-            </ul>
-          </div>
-
-          <div class="project">
-            <strong>Home Enterprise Network Architecture</strong>
-            <ul class="inline-list">
-              <li>MikroTik CCR1036 core router, Ruckus AP provisioning, WireGuard VPN, and secure VLAN segmentation for remote access and lab use.</li>
-            </ul>
-          </div>
-        </section>
-      </div>
-
-      <!-- RIGHT: CERTS, EDUCATION, EXTRA -->
-      <div>
-        <section>
-          <h2>Certifications</h2>
-          <div class="cert-item">
-            AWS Certified Cloud Practitioner
-            Linux Foundation Certified SysAdmin (LFCS)
-            CompTIA A+
-            CompTIA Network+
-            CompTIA Cloud+
-          </div>
-          <div class="cert-item">
-            AWS Solutions Architect <span class="small-muted">(in progress)</span>
-          </div>
-        </section>
-
-        <section>
-          <h2>Education</h2>
-          <div class="edu-item">
-            <strong>Bachelor of Science, Information Technology (Systems &amp; Networking)</strong><br>
-            Devry University
-          </div>
-        </section>
-
-        <section>
-          <h2>Branding</h2>
-          <p class="small-muted">
-            Personal resume site and profile branded under <strong>WEP Global Tech (WEPGT)</strong>,
-            with the WEPGT logo displayed in the header and consistent use of the WEPGT color palette.
-          </p>
-        </section>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
