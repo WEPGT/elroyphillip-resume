@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WEP Global Tech – Government Contracting Division</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="WEP Global Tech – Government Contracting Division. Cloud, Systems, Networking, and Security support for government and public sector organizations." />
+
+  <style>
+    :root {
+      --bg-main: #05060a;
+      --bg-card: #111827;
+      --bg-card-alt: #020617;
+      --border-subtle: #1f2937;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #1e90ff;
+      --accent-soft: rgba(30, 144, 255, 0.12);
+      --accent-strong: rgba(30, 144, 255, 0.25);
+      --danger: #f97373;
+      --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.55);
+      --radius-xl: 18px;
+      --radius-lg: 12px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #020617, #020617 40%, #000000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .page-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .brand-block {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .brand-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #38bdf8, #1e90ff 40%, #020617 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.3);
+      overflow: hidden;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-text h1 {
+      font-size: 1.4rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .brand-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 460px;
+    }
+
+    .badge-strip {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .badge-strip {
+        align-items: flex-end;
+      }
+    }
+
+    .tag-pill {
+      border-radius: var(--radius-pill);
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      background: linear-gradient(90deg, rgba(15, 23, 42, 0.9), rgba(30, 64, 175, 0.4));
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.35);
+    }
+
+    .tag-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero {
+      border-radius: 22px;
+      padding: 22px 20px 22px;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(30, 64, 175, 0.4), transparent 60%),
+        linear-gradient(135deg, #020617, #020617);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle at top right, rgba(148, 163, 184, 0.18), transparent 55%);
+      opacity: 0.5;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 12px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-chip {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.75);
+      padding: 10px 12px;
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-chip span:first-child {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .hero-chip span:last-child {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .contact-block {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--accent-soft);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), rgba(15, 23, 42, 0.96));
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      width: 100%;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .contact-row span {
+      display: block;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-value {
+      font-weight: 500;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1d4ed8, #1e90ff);
+      color: #f9fafb;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.03);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.4);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(148, 163, 184, 0.8);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 22px;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: linear-gradient(145deg, var(--bg-card), var(--bg-card-alt));
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 18px 18px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: var(--accent);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .naics-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 6px;
+    }
+
+    .naics-table th,
+    .naics-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid rgba(55, 65, 81, 0.85);
+      text-align: left;
+    }
+
+    .naics-table th {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .naics-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(30, 144, 255, 0.14);
+      color: var(--accent);
+      font-size: 0.75rem;
+      border: 1px solid rgba(30, 144, 255, 0.4);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-muted);
+    }
+
+    .status-pill.ready {
+      border-color: rgba(34, 197, 94, 0.8);
+      color: #bbf7d0;
+      background: rgba(22, 163, 74, 0.18);
+    }
+
+    .status-pill.pending {
+      border-color: rgba(234, 179, 8, 0.9);
+      color: #facc15;
+      background: rgba(202, 138, 4, 0.18);
+    }
+
+    .status-pill.note {
+      border-color: rgba(148, 163, 184, 0.8);
+      color: #cbd5f5;
+      background: rgba(30, 64, 175, 0.18);
+    }
+
+    .keyline {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.8), transparent);
+      margin: 10px 0 12px;
+      opacity: 0.9;
+    }
+
+    .note-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    footer {
+      margin-top: 24px;
+      padding-top: 12px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(31, 41, 55, 0.85);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    footer span strong {
+      color: var(--accent);
+    }
+
+    a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell">
+    <header>
+      <div class="brand-block">
+        <div class="brand-logo">
+          <!-- If wepgt-logo.png exists in this repo, it will be shown -->
+          <img src="wepgt-logo.png" alt="WEP Global Tech logo" />
+        </div>
+        <div class="brand-text">
+          <h1>WEP Global Tech</h1>
+          <p>Government Contracting Division &bull; Secure, reliable technology solutions for mission-critical operations.</p>
+        </div>
+      </div>
+
+      <div class="badge-strip">
+        <div class="tag-pill">
+          <span class="tag-dot"></span>
+          <span>Government Contracting Division</span>
+        </div>
+        <div class="tag-sub">
+          Cloud &bull; Systems &bull; Networking &bull; Security &bull; Broadcast / A/V
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-title">Modern Infrastructure &amp; Operations for the Public Sector</div>
+          <p class="hero-subtitle">
+            WEP Global Tech specializes in secure, resilient infrastructure and systems support for agencies and
+            organizations that cannot afford downtime. We combine real-world operations experience with modern
+            cloud, networking, and security practices.
+          </p>
+
+          <div class="hero-grid">
+            <div class="hero-chip">
+              <span>Core Focus</span>
+              <span>Cloud, Systems Administration, Networking, and Security Engineering</span>
+            </div>
+            <div class="hero-chip">
+              <span>Support Model</span>
+              <span>Project-based, ongoing O&M, and 24×7 critical incident escalation</span>
+            </div>
+            <div class="hero-chip">
+              <span>Primary Customer Types</span>
+              <span>Government agencies, public safety, courts, and critical infrastructure</span>
+            </div>
+            <div class="hero-chip">
+              <span>Location</span>
+              <span>Based in Georgia &ndash; supporting customers across the U.S.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="contact-block">
+            <div class="contact-row">
+              <div>
+                <div class="contact-label">Point of Contact</div>
+                <div class="contact-value">Elroy &ldquo;Roy&rdquo; Phillip, Founder</div>
+              </div>
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                  <a href="mailto:elroy.phillip@wepgt.com">elroy.phillip@wepgt.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-row" style="margin-top: 8px;">
+              <div>
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">
+                  <a href="tel:+14043542260">(404) 354-2260</a>
+                </div>
+              </div>
+              <div>
+                <div class="contact-label">Website</div>
+                <div class="contact-value">
+                  <a href="https://wepgt.com" target="_blank" rel="noreferrer">wepgt.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn-primary" href="wepgt-capability-statement.pdf" target="_blank" rel="noreferrer">
+              View Capability Statement (PDF)
+            </a>
+            <a class="btn-ghost" href="#contact">
+              Request a Discovery Call
+            </a>
+          </div>
+
+          <span class="note-text">
+            <strong>Note:</strong> UEI / CAGE / SAM registration status can be updated below as records are finalized.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- LEFT COLUMN -->
+      <section>
+        <article class="card">
+          <h2>Core capabilities</h2>
+          <p class="tagline">
+            WEP Global Tech provides hands-on, operations-focused technology support with an emphasis on uptime,
+            observability, and secure access.
+          </p>
+          <div class="keyline"></div>
+
+          <div class="two-col">
+            <div>
+              <h3>Cloud &amp; Infrastructure</h3>
+              <ul class="bullet-list">
+                <li>AWS cloud infrastructure deployment &amp; hardening (VPC, IAM, VPN, security groups)</li>
+                <li>Infrastructure as Code (Terraform) for repeatable, auditable environments</li>
+                <li>Monitoring, alerting, and logging for cloud and hybrid environments</li>
+                <li>Secure remote access (VPN, WireGuard, bastion hosts) for admins and field teams</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Systems &amp; Networking</h3>
+              <ul class="bullet-list">
+                <li>Windows and Linux systems administration for servers and endpoints</li>
+                <li>LAN / WAN design, firewall configuration, and segmenting sensitive networks</li>
+                <li>Small enterprise network design (MikroTik, managed switches, enterprise Wi-Fi)</li>
+                <li>Performance troubleshooting and optimization for on-prem and cloud workloads</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="keyline"></div>
+
+          <div class="two-col">
+            <div>
+              <h3>Security &amp; Compliance Support</h3>
+              <ul class="bullet-list">
+                <li>Secure configuration baselines and access control (least privilege)</li>
+                <li>Logging and audit trails to support compliance and investigations</li>
+                <li>Backup, recovery, and continuity planning for critical systems</li>
+                <li>Vulnerability remediation in partnership with security teams</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Broadcast / A/V &amp; Special Environments</h3>
+              <ul class="bullet-list">
+                <li>Support for control-room style, 24×7 environments</li>
+                <li>Integration of A/V, networking, and compute for production workflows</li>
+                <li>Coordination between engineering, operations, and vendor teams</li>
+                <li>Documentation and runbook creation for complex systems</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Past performance &AMP; relevant experience</h2>
+          <p class="tagline">
+            WEP Global Tech brings a blend of enterprise operations, systems administration, and hands-on engineering
+            experience that translates directly into reliable support for government customers.
+          </p>
+          <div class="keyline"></div>
+
+          <ul class="bullet-list">
+            <li><strong>Enterprise operations &amp; support:</strong> Experience supporting mission-critical
+                production environments where minutes of downtime matter.</li>
+            <li><strong>Cloud &amp; automation:</strong> Design and deployment of AWS-based dashboards, logging pipelines,
+                and automation to improve visibility into applications and infrastructure.</li>
+            <li><strong>Secure remote access:</strong> Planning and implementation of VPN access for remote admins and
+                support staff while preserving security boundaries.</li>
+            <li><strong>SMB and public safety customers:</strong> Support for organizations with limited internal IT
+                staff that require highly available, secure infrastructure.</li>
+          </ul>
+
+          <p class="note-text">
+            Specific project references and detailed past performance summaries are available upon request and can be
+            tailored to the needs of your solicitation or RFI/RFP.
+          </p>
+        </article>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <aside>
+        <article class="card">
+          <h2>Company identifiers</h2>
+
+          <table class="naics-table">
+            <tbody>
+              <tr>
+                <th scope="row">Legal Business Name</th>
+                <td>WEP Global Tech (WEPGT)</td>
+              </tr>
+              <tr>
+                <th scope="row">Primary Contact</th>
+                <td>Elroy &ldquo;Roy&rdquo; Phillip, Founder &amp; Principal Consultant</td>
+              </tr>
+              <tr>
+                <th scope="row">UEI</th>
+                <td><span class="status-pill pending">Pending &ndash; in registration</span></td>
+              </tr>
+              <tr>
+                <th scope="row">CAGE Code</th>
+                <td><span class="status-pill pending">Pending &ndash; in registration</span></td>
+              </tr>
+              <tr>
+                <th scope="row">SAM.gov</th>
+                <td><span class="status-pill note">Registration in progress</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Business Type</th>
+                <td>Small Business</td>
+              </tr>
+              <tr>
+                <th scope="row">Primary Location</th>
+                <td>Georgia, USA (remote support available nationwide)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="note-text">
+            This section is designed to be kept up-to-date as UEI, CAGE, and SAM registrations are finalized.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>NAICS codes</h2>
+          <p class="tagline">
+            WEP Global Tech primarily operates under the following NAICS codes for IT and infrastructure services.
+          </p>
+
+          <table class="naics-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Title</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="naics-tag">541512</span></td>
+                <td>Computer Systems Design Services</td>
+                <td>Systems integration, cloud architecture, and IT consulting.</td>
+              </tr>
+              <tr>
+                <td><span class="naics-tag">541513</span></td>
+                <td>Computer Facilities Management Services</td>
+                <td>Ongoing management and operation of critical systems and infrastructure.</td>
+              </tr>
+              <tr>
+                <td><span class="naics-tag">541519</span></td>
+                <td>Other Computer Related Services</td>
+                <td>Specialized IT services, disaster recovery, and technical support.</td>
+              </tr>
+              <tr>
+                <td><span class="naics-tag">518210</span></td>
+                <td>Computing Infrastructure / Hosting &amp; Data Processing</td>
+                <td>Cloud and hosting infrastructure, monitoring, and platform support.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="note-text">
+            Additional NAICS or PSC codes can be added as your SAM.gov profile and contract portfolio expand.
+          </p>
+        </article>
+
+        <article class="card" id="contact">
+          <h2>Engagement model &amp; contact</h2>
+          <p class="tagline">
+            WEP Global Tech is available for project-based work, assessments, and ongoing operations support.
+          </p>
+          <div class="keyline"></div>
+
+          <h3>How we typically engage</h3>
+          <ul class="bullet-list">
+            <li>Discovery call to understand mission, constraints, and timelines</li>
+            <li>Rapid assessment of current environment and risks</li>
+            <li>Action plan with prioritized recommendations and phase-based delivery</li>
+            <li>Clear documentation and knowledge transfer to internal teams</li>
+          </ul>
+
+          <div class="keyline"></div>
+
+          <h3>Contact details</h3>
+          <p style="font-size:0.9rem;">
+            <strong>Email:</strong> <a href="mailto:elroy.phillip@wepgt.com">elroy.phillip@wepgt.com</a><br />
+            <strong>Phone:</strong> <a href="tel:+14043542260">(404) 354-2260</a><br />
+            <strong>Website:</strong> <a href="https://wepgt.com" target="_blank" rel="noreferrer">wepgt.com</a>
+          </p>
+
+          <div class="btn-row" style="margin-top:10px;">
+            <a class="btn-primary" href="mailto:elroy.phillip@wepgt.com?subject=Discovery%20Call%20-%20WEP%20Global%20Tech">
+              Schedule a Discovery Call
+            </a>
+          </div>
+        </article>
+      </aside>
+    </main>
+
+    <footer>
+      <span>&copy; <span id="year"></span> <strong>WEP Global Tech (WEPGT)</strong>. All rights reserved.</span>
+      <span>Government Contracting Division &bull; Prepared by Elroy &ldquo;Roy&rdquo; Phillip</span>
+    </footer>
+  </div>
+
+  <script>
+    // Simple year auto-update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
